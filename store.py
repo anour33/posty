@@ -1,19 +1,15 @@
-class model:
+class post:
 
-    def __init__(self,logo,name,image,new,edit,delet,post) :
-        self.logo = logo
+    def __init__(self,name,image,content) :
         self.name = name
         self.image = image
-        self.new = new
-        self.edit = edit
-        self.delet = delet
-        self.post = post
+        self.content = content
 
 
-model1 = model(logo="logo",name="Yaser",image="img_url",new="new",edit="edit", delet="delet",post="je suis Yaser ,et ceci est un exemple de post ")
-model2 = model(logo="logo",name="Mohamed",image="img_url",new="new",edit="edit", delet="delet",post="je suis Mohamed,et ceci est un exemple de post ")
-model3 = model(logo="logo",name="Sara",image="img_url",new="new",edit="edit", delet="delet",post="je suis Sara ,et ceci est un exemple de post ")
+post1 = post(name="Yaser",image="img_url",content="je suis Yaser ,et ceci est un exemple de post ")
+post2 = post(name="Mohamed",image="img_url",content="je suis Mohamed,et ceci est un exemple de post ")
+post3 = post(name="Sara",image="img_url",content="je suis Sara ,et ceci est un exemple de post ")
 
-print(model1.name,"\n",model1.post)
-print(model2.name,"\n",model2.post)
-print(model3.name,"\n",model3.post)
+print(post1.name,"\n",post1.content)
+print(post2.name,"\n",post2.content)
+print(post3.name,"\n",post3.content)
