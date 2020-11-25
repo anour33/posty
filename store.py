@@ -25,14 +25,33 @@ class PostStore:
         else:
               return None
 
+    def update(self, id, fields):
+        post =self.get_by_id(id)
+        post.name = fields['name']
+        post.photo_url = fields['photo_url']
+        post.body = fields['body']
+
+        return post
+
+
+    def delete(self, id):
+        post=self.get_by_id(id)
+        posts.remove(post)
+        return post
+
+
+
+
+
+
 
 
 
 
 post_store = PostStore()
-post1=Post(id=1 , photo_url="photo_url" , name="salim",body="body" )
-post2=Post(id=2 , photo_url="photo_url" , name="sara",body="body" )
-post3=Post(id=3 , photo_url="photo_url" , name="samir",body="body" )
+post1=Post(id=1 , photo_url="photo_url" , name="SALIM",body="hello you all" )
+post2=Post(id=2 , photo_url="photo_url" , name="SARA",body="hey you" )
+post3=Post(id=3 , photo_url="photo_url" , name="SAMIR",body="hola" )
 
 post_store.add(post1)
 post_store.add(post2)
@@ -40,6 +59,16 @@ post_store.add(post3)
 
 mes_posts = post_store.get_all()
 print(mes_posts)
-mon_post=post_store.get_by_id(1)
-print(mon_post)
+
+mon_post=post_store.get_by_id(3)
+print(mon_post.id , mon_post.name ,":" ,  mon_post.body)
+
+
+updated_fields = {'name' :'wissem', 'photo_url': 'photo_url2' , 'body':"i'm an other person"}
+newPost=post_store.update(3, updated_fields)
+print(newPost.id , newPost.name , ":" , newPost.body)
+
+to_remove=post_store.delete(2)
+print(posts)
+print("deleet post id=",to_remove.id ,'\n', to_remove.name , "who said <<", to_remove.body , ">>")
 
